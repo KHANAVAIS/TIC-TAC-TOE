@@ -1,63 +1,56 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body{
     background-color: rgb(190, 231, 241);
     text-align: center;
-    
 }
-/* h1{
-    margin-top: 40px;
-} */
+
 .container{
-    
     display: flex;    
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    
-
 }
+
 .game{
-height: 400px;
-display: flex;
-flex-wrap: wrap;
-width: 500px;
-justify-content: center;
-align-items: center;
-gap: 1.5vmin;
-
-
-
-    
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
 }
+
 .box{
-height: 120px;
-width: 120px;
-background-color: rgb(216, 215, 216);
-border: none;
-border-radius: 1rem;
-/* margin: 4px; */
-box-shadow: 1px 2px  0.9px rgb(129, 116, 116);
-font-size: 40px;
-color: black;
-
-
+    height: 120px;
+    width: 120px;
+    background-color: rgb(216, 215, 216);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 1px 2px 0.9px rgb(129, 116, 116);
+    font-size: 40px;
+    color: black;
+    transition: 0.3s ease-in-out;
 }
 
-#reset{
+#reset, .newgame{
+    font-size: 20px;
+    margin-top: 30px;
     background-color: orange;
     border-radius: 10px;
     border: none;
-    font-size: 20px;
-    margin-top: 30px;
-
-    /* content-visibility: hidden; */
-
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
-#reset:hover{
+
+#reset:hover, .newgame:hover{
     font-size: 22px;
     background-color: rgb(120, 26, 228);
     border-radius: 5px;
@@ -69,6 +62,7 @@ color: black;
     border-radius: 1.2rem;
     background-color: red;
 }
+
 h1{
     margin-top: 40px;
 }
@@ -77,12 +71,37 @@ h1{
     display: none;
 }
 
-.newgame{
-    font-size: 20px;
-    margin-top: 30px;
-    background-color: blanchedalmond;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
+/* Media Queries for Responsive Design */
 
+/* For Tablets */
+@media (max-width: 768px) {
+    .game {
+        width: 350px;
+        height: auto;
+    }
+    .box {
+        height: 100px;
+        width: 100px;
+        font-size: 30px;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+    .game {
+        width: 280px;
+        gap: 1vmin;
+    }
+    .box {
+        height: 80px;
+        width: 80px;
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    #reset, .newgame {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
 }
